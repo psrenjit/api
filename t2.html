@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="checkbox" name="myname" id="" value="1">
+    <input type="checkbox" name="myname" id="" value="2">
+    <input type="checkbox" name="myname" id="" value="3">
+    <input type="checkbox" name="myname" id="" value="4">
+    <button class="btnupdate">bcd</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    $(document).on('click', '.btnupdate', function() {
+        var favorite = [];
+        $.each($("input[name='myname']:checked"), function() {
+            favorite.push($(this).val());
+        });
+        alert("My favourite sports are: " + favorite.join(", "));
+        updateNumbers(favorite.join(","), pN);
+    });
+});
+function updateNumbers(slNo,pN) {
+    splitStringIntoWords(slNo);
+    $.ajax({
+        type: "POST",
+        url: 'testing.php',
+        data: {
+            sno: sum,
+            pn:pN,
+        },
+        success: function(response) {
+            $("#row1").html(response);            
+            //mailToStation(slNo,mobileNo,pN,reqStation,station,cnNo,emailId);
+        }
+    });
+}
+
+  </script>
+</body>
+</html>

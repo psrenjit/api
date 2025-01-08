@@ -1,0 +1,18 @@
+#cNumber,#mNumber{
+    color: rgb(3, 3, 3);
+    font-size: 16px;
+    font-weight: bold;
+}
+label{
+    width: 200px;
+    background-color: darkgrey;
+    color: black;
+    font-weight: bold;
+}
+.lblbg{
+    width: 200px;background-color: #edf2f3; color: black; font-weight: bold;
+  }
+  body{
+    font-family:'Courier New'; text-align: center;
+  }
+
